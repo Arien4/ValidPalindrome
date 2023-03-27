@@ -25,19 +25,19 @@ public class Main {
     }
 
     public static boolean isPalindrome(String s) {
-        if (!Objects.equals(s, "")) {
-            int begin = 0;
-            int end = s.length() - 1;
-            while (begin < end && begin < s.length() && end >= 0) {
-                while (begin < s.length() && !Character.isLetterOrDigit(s.charAt(begin))) begin++;
-                while (end >= 0 && !Character.isLetterOrDigit(s.charAt(end))) end--;
-                if (begin > end) return true;
-                if (Character.toLowerCase(s.charAt(begin)) != Character.toLowerCase(s.charAt(end))) return false;
-                begin++;
-                end--;
-            }
 
+        int begin = 0;
+        int end = s.length() - 1;
+        while (begin < end && begin < s.length() && end >= 0) {
+            while (begin < s.length() && !Character.isLetterOrDigit(s.charAt(begin))) begin++;
+            while (end >= 0 && !Character.isLetterOrDigit(s.charAt(end))) end--;
+            if (begin > end) return true;
+            if (Character.toLowerCase(s.charAt(begin)) != Character.toLowerCase(s.charAt(end))) return false;
+            begin++;
+            end--;
         }
+
+
         return true;
     }
 }
